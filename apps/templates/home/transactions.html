@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> Transactions for Address {{ transactions.address }}</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Transaction Hash
+                    </th>
+                    <th>
+                      Transaction Amount
+                    </th>
+                    <th>
+                      Final Balance
+                    </th>
+                    <th>
+                      Time (UTC)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for transaction in transactions.transactions %}
+                  <tr>
+                      <td> {{ transaction.hash}} </td>
+                      <td> {{ transaction.amount}} </td>
+                      <td> {{ transaction.finalBalance}} </td>
+                      <td> {{ transaction.humanTime}} </td>
+                  </tr>
+                  {% endfor %}
+                  {% if page > 1 %}
+                  <a href="/transactions/{{transactions.address}}?page={{page-1}}">Previous</a>
+                  {% endif %}
+                  <span> Page {{ page }} of {{ total_pages }} </span>
+                  {% if page < total_pages %}
+                  <a href="/transactions/{{transactions.address}}?page={{page+1}}">Next</a>
+                  {% endif %}
+                  <form action="/transactions/{{transactions.address}}" method="post">
+                    <input type="text" name="pageToGo" class=".form-control" placeholder="page to go">
+                    <button type="submit" class="btn btn-fill btn-sm">Go to page</button>
+                  </form>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

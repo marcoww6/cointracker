@@ -27,6 +27,7 @@ def configure_database(app):
 
     @app.before_first_request
     def initialize_database():
+        db.drop_all()
         db.create_all()
         from apps.authentication.models import Users
         testUser = Users(username="test", email="test@gmail.com", password="pass")
