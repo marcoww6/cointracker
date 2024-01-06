@@ -1,43 +1,42 @@
-# [Black Dashboard Flask](https://www.creative-tim.com/product/black-dashboard-flask) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Dashboard,%20a%20free%20Material%20Bootstrap%204%20Admin%20Template%20%E2%9D%A4%EF%B8%8F%20https%3A//bit.ly/2Lyat1Y%20%23bootstrap%20%23material%20%23design%20%23developers%20%23freebie%20%20via%20%40CreativeTim)
+#A Web App to Track Your BTC Addresses
 
- ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-flask.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-flask/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-flask.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-flask/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
-
-![Black Dashboard Flask - Admin Dashboard coded in Django.](https://github.com/creativetimofficial/black-dashboard-flask/blob/master/media/black-dashboard-flask-intro.gif)
-
+ ![version](https://img.shields.io/badge/version-1.0.1-blue.svg)
+Kudos to Creative-time for the [Balck Dashboard Flask template](https://www.creative-tim.com/product/black-dashboard-flask)!
 <br />
 
 > Features:
+- 🪽 Create a user and each user could track their addresses independently
+- 🪽 Add a BTC address to track in your dashboard
+- 🪽 Support adding a nick name for the address so you can easily know which address is which
+- 🪽 Able to Synchronize balance of the address and delete the address from tracking
+- 🪽 Have pagination to view a list of transactions related to the address.
 
-- ✅ `Up-to-date dependencies`
-- ✅ Black Dashboard, BS4 Design
-- ✅ `DB Tools`: SQLAlchemy ORM, `Flask-Migrate` (schema migrations)
-- ✅ `Persistence`: SQLite (dev), MySql (prod)
-- ✅ `Authentication`: Session Based, `OAuth` via Github
+> Technology
+- ✅ `Persistence`: SQLite
+- ✅ `Framework`: Flask and Jinja2
+- ✅ `Authentication`: Session Based
 - ✅ `Deployment`: Docker, Page Compression (Flask-Minify) 
+- ✅ `API`: Use Blockchain.com API 
 
+> Limitation
+- 😱 Blockchain.com API will time out for large offset. Blockchair API is better for large offset, but I run out of time to switch
+- 😱 User profile is only partialy connected to the DB, which means all user will see my pickachu placeholder profile except email and user name.
 <br />
 
 ## Table of Contents
 
-* [Demo](#demo)
-* [Docker Support](#docker-support)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-
-<br />
-
-## Demo
-
-> To authenticate use the default credentials ***test / pass*** or create a new user on the [registration page](https://www.creative-tim.com/live/black-dashboard-flask).
-
-- **Black Dashboard Flask** [Login Page](https://www.creative-tim.com/live/black-dashboard-flask)
+- [Table of Contents](#table-of-contents)
+- [Docker Support](#docker-support)
+- [Create/Edit `.env` file](#createedit-env-file)
+- [Manual Build](#manual-build)
+  - [👉 Set Up for `Unix`, `MacOS`](#-set-up-for-unix-macos)
+  - [👉 Set Up for `Windows`](#-set-up-for-windows)
+- [Recompile SCSS](#recompile-scss)
+- [Documentation](#documentation)
+- [Template File Structure](#template-file-structure)
+- [Browser Support](#browser-support)
+- [Resources](#resources)
+- [Licensing](#licensing)
 
 <br />
 
@@ -56,7 +55,7 @@ $ cd black-dashboard-flask
 $ docker-compose up --build 
 ```
 
-Visit `http://localhost:5085` in your browser. The app should be up & running.
+Visit `http://localhost:5085` in your browser. The app should be up & running. If you have `Error: error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: ` on mac, change credsStore to credStore in ~/.docker/config.json.
 
 <br />
 
@@ -83,10 +82,11 @@ The meaning of each variable can be found below:
 > Install modules via `VENV`  
 
 ```bash
-$ virtualenv env
+$ python -m venv env
 $ source env/bin/activate
 $ pip3 install -r requirements.txt
 ```
+To exit the virtual environment, use `deactivate` command
 
 <br />
 
@@ -182,7 +182,7 @@ The documentation for the **Black Dashboard Flask** is hosted at our [website](h
 
 <br />
 
-## File Structure
+## Template File Structure
 
 Within the download you'll find the following directories and files:
 
@@ -254,46 +254,8 @@ At present, we officially aim to support the last two versions of the following 
 
 <br />
 
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the **Black Dashboard Flask**. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the **Black Dashboard Flask**. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser-specific, so specifying in what browser you encountered the issue might help.
-
-<br />
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
-
-<br />
 
 ## Licensing
 
 - Copyright 2019 - present [Creative Tim](https://www.creative-tim.com/)
 - Licensed under [Creative Tim EULA](https://www.creative-tim.com/license)
-
-<br />
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
-
-<br />
-
-## Social Media
-
-- Twitter: <https://twitter.com/CreativeTim>
-- Facebook: <https://www.facebook.com/CreativeTim>
-- Dribbble: <https://dribbble.com/creativetim>
-- Instagram: <https://www.instagram.com/CreativeTimOfficial>
-
-<br />
-
----
-[Black Dashboard Flask](https://www.creative-tim.com/product/black-dashboard-flask) - Provided by [Creative Tim](https://www.creative-tim.com/) and [AppSeed](https://appseed.us)
