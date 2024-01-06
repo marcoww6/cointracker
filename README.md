@@ -1,43 +1,45 @@
-#A Web App to Track Your BTC Addresses
+# A Web App to Track Your BTC Addresses
 
  ![version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 Kudos to Creative-time for the [Balck Dashboard Flask template](https://www.creative-tim.com/product/black-dashboard-flask)!
+## Table of Contents
+
+- [A Web App to Track Your BTC Addresses](#a-web-app-to-track-your-btc-addresses)
+  - [Table of Contents](#table-of-contents)
+  - [🪽 Features:](#-features)
+  - [✅ Technology](#-technology)
+  - [😱 Limitation](#-limitation)
+  - [Docker Support](#docker-support)
+  - [Create/Edit `.env` file](#createedit-env-file)
+  - [Manual Build](#manual-build)
+    - [👉 Set Up for `Unix`, `MacOS`](#-set-up-for-unix-macos)
+    - [👉 Set Up for `Windows`](#-set-up-for-windows)
+  - [Recompile SCSS](#recompile-scss)
+  - [Documentation](#documentation)
+  - [Template File Structure](#template-file-structure)
+  - [Browser Support](#browser-support)
+  - [Resources](#resources)
+  - [Licensing](#licensing)
+
 <br />
 
-> Features:
+## 🪽 Features:
 - 🪽 Create a user and each user could track their addresses independently
 - 🪽 Add a BTC address to track in your dashboard
 - 🪽 Support adding a nick name for the address so you can easily know which address is which
 - 🪽 Able to Synchronize balance of the address and delete the address from tracking
 - 🪽 Have pagination to view a list of transactions related to the address.
 
-> Technology
+## ✅ Technology
 - ✅ `Persistence`: SQLite
 - ✅ `Framework`: Flask and Jinja2
 - ✅ `Authentication`: Session Based
 - ✅ `Deployment`: Docker, Page Compression (Flask-Minify) 
 - ✅ `API`: Use Blockchain.com API 
 
-> Limitation
+## 😱 Limitation
 - 😱 Blockchain.com API will time out for large offset. Blockchair API is better for large offset, but I run out of time to switch
 - 😱 User profile is only partialy connected to the DB, which means all user will see my pickachu placeholder profile except email and user name.
-<br />
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Docker Support](#docker-support)
-- [Create/Edit `.env` file](#createedit-env-file)
-- [Manual Build](#manual-build)
-  - [👉 Set Up for `Unix`, `MacOS`](#-set-up-for-unix-macos)
-  - [👉 Set Up for `Windows`](#-set-up-for-windows)
-- [Recompile SCSS](#recompile-scss)
-- [Documentation](#documentation)
-- [Template File Structure](#template-file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Licensing](#licensing)
-
 <br />
 
 ## Docker Support
