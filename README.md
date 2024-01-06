@@ -47,8 +47,8 @@ Kudos to Creative-time for the [Balck Dashboard Flask template](https://www.crea
 > Get the code
 
 ```bash
-$ git clone https://github.com/app-generator/black-dashboard-flask.git
-$ cd black-dashboard-flask
+$ git clone git@github.com:ariattt/cointracker.git
+$ cd cointracker
 ```
 
 > Start the app in Docker
